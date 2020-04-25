@@ -5,10 +5,10 @@ The scenario of the implementation of an intruder detection system is modeled us
 
 <div align="center">
     Layout room Page web:
-    <img src="/screen/1.png" width="400px"</img> 
+    <img src="/screen/1.png" width="400px"</img> <br>
     Model arduino component:
-    <img src="/screen/2.png" width="400px"</img>  
+    <img src="/screen/2.png" width="400px"</img>  <br>
     Real box:
-    <img src="/screen/3.png" width="400px"</img>   
+    <img src="/screen/3.png" width="400px"</img>   <br>
 </div>
 
