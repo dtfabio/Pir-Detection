@@ -1,0 +1,12 @@
+- 01-arduino-one_sensor
+Arduino, output sulla console del rilevamento di un singolo PIR.
+- 02-arduino-multi_sensor
+Arduino, output sulla console del rilevamento di quattro PIR.
+- 03-nodemcu-test-one_led
+NodeMCU, test di accensione del LED incorporato. L'accensione avviene accedendo alla pagina web all'indirizzo stampato sulla console dell'IDE di Arduino.
+- 04-nodemcu-test-one_pir
+NodeMCU, test di rilevamento del segnale di un singolo PIR.
+- 05-arduino-serial
+Codice Arduino, comunicazione seriale dai PIR al programma Java, passando per Arduino.
+- 06-java-serial
+Codice Java, comunicazione seriale dai PIR al programma Java, passando per Arduino.

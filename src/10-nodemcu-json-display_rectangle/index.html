@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>test</title>
+</head>
+<body>
+<h1 style="font-size: 45px; font-family: sans-serif;">PIR Detection</h1>
+<div id="wrapper_1_2" style="margin: 0px; border-style: none; width: 710px; overflow: auto; padding: 8px 8px 5px 8px; background-color: gray;"> 
+  <div id="div_sensor_1" style="float: left; width: 350px; height: 220px; border-style: none; background-color: gray; margin-right: 5px;">
+    <h1 style="font-size: 50px; font-family: sans-serif; margin: 0px; padding: 20px;">#1</h1>
+  </div>
+  <div id="div_sensor_2" style="float: left; width:350px; height: 220px; border-style: none; background-color: gray; margin-left: 5px;"> 
+    <h1 style="font-size: 50px; font-family: sans-serif; margin: 0px; padding: 20px;">#2</h1>
+  </div>
+</div>
+<div id="wrapper_3_4" style="margin: 0px; border-style: none; width: 710px; overflow: auto; padding: 5px 8px 8px 8px; background-color: gray;"> 
+  <div id="div_sensor_4" style="float: left; width: 350px; height: 220px; border-style: none; background-color: gray; margin-right: 5px;">
+    <h1 style="font-size: 50px; font-family: sans-serif; margin: 0px; padding: 20px;">#4</h1>
+  </div>
+  <div id="div_sensor_3" style="float: left; width:350px; height: 220px; border-style: none; background-color: gray; margin-left: 5px;"> 
+    <h1 style="font-size: 50px; font-family: sans-serif; margin: 0px; padding: 20px;">#3</h1>
+  </div>
+</div>
+<p id="output"></p>
+<script>
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var myObj = JSON.parse(this.responseText);
+    document.getElementById("div_sensor_1").style.backgroundColor = myObj.color_sensor_1;
+    document.getElementById("div_sensor_2").style.backgroundColor = myObj.color_sensor_2;
+    document.getElementById("div_sensor_3").style.backgroundColor = myObj.color_sensor_3;
+    document.getElementById("div_sensor_4").style.backgroundColor = myObj.color_sensor_4;
+  }
+};
+xmlhttp.open("GET", "https://alepolisena.com/iot/status.json", true);
+xmlhttp.send(); 
+</script>
+<script type="text/javascript">
+window.onload = function () {
+    setInterval(function() {
+    	var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+  			if (this.readyState == 4 && this.status == 200) {
+    			var myObj = JSON.parse(this.responseText);
+    			document.getElementById("div_sensor_1").style.backgroundColor = myObj.color_sensor_1;
+          document.getElementById("div_sensor_2").style.backgroundColor = myObj.color_sensor_2;
+          document.getElementById("div_sensor_3").style.backgroundColor = myObj.color_sensor_3;
+          document.getElementById("div_sensor_4").style.backgroundColor = myObj.color_sensor_4;
+  			}
+		};
+		xmlhttp.open("GET", "https://alepolisena.com/iot/status.json", true);
+		xmlhttp.send(); 
+	}, 1000);
+};
+</script>
+</body>
+</html>
